@@ -6,6 +6,8 @@
 //var doc = document.getElementById("msg");
 
 var arr = [];
+// var selectedAnswer = ;
+// var correctAnswer = ;
 var squares = document.querySelectorAll(".square");
 var msg = document.querySelector("#msg");
 var color = document.querySelector("#color");
@@ -35,14 +37,16 @@ function randomNumber(){
 
 
 
-var squares = document.querySelectorAll(".square");
+var squares = document.getElementsByClassName(".square");
 for(var i= 0;i<6;++i ){
  arr.push(randomColor());
- // console.log(squares[i] );
+  // console.log(squares[i] );
  squares[i].style.backgroundColor = arr[i];
 
 // = arr[i];
 }
+// var correctAnswer = arr[randomNumber];
+// color.textContent = arr[correctAnswer];
 
 // document.getElementById("msg").textContent = "try again";
 
