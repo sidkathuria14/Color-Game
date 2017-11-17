@@ -2,43 +2,34 @@
 <html>
 <head>
 	<title>Color Game</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="mycss.css">
 </head>
 <body>
-
-<script type="text/javascript" src = "myjs.js"></script>
-
-<h1>The Amazing Color Game</h1>
-
-<h3>Tap on the right color !!</h3>
-
+<h1>
+	The Great
+	<br><span id="colorDisplay">
+	RGB</span></br>
+	 Color Game</h1>
 
 
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
+<div id = "stripe">
+<span id="message"></span>
+	<input type="button" id = "playagain" value="Play Again?">
 
-
-<!-- <input type = "button" id = "clickme" value="Click me!"/>
-<div id = "alert_placeholder"></div> -->
-
-<h2> <span id = "color"> </span>  </h2>
-
-<span id = "msg"></span>
-
-<div id="container">
-	
-	<div class = "square"></div>
-	<div class = "square"></div>
-	<div class = "square"></div>
-	<div class = "square"></div>
-	<div class = "square"></div>
-	<div class = "square"></div>
 </div>
 
+<div id="container">
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+	<div class="square"></div>
+</div>
+<div>
+	<span id = "score"></span>
+</div>
 
-<!-- <h3>Your score is: <span id="score"> </span></h3> -->
-
+<script type="text/javascript" src="myjs.js"></script>
 </body>
 </html>
