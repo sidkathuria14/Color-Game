@@ -1,40 +1,63 @@
-var arr = [];
-var squares = document.querySelectorAll(".square");
-var score = 0;
 
-arr = fill();
+var squares = document.querySelectorAll(".square");
+var resetButton = document.querySelector("#playagain");
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var scoreDisplay = document.querySelector("#score");
 var head = document.querySelector("h1");
+var score = 0;
 
- var pickedColor = selectedColor();
-  colorDisplay.textContent = pickedColor;
- console.log(pickedColor);
+reset();
 
-for(var i= 0;i<6;++i ){
+resetButton.addEventListener("click",function(){ 
+  reset();
+  resetColors();
+  messageDisplay.textContent = ""; 
+  resetButton.value = "New Colors!"});
+
+
+function resetColors(){
+  head.style.background = "#4682B4";
+}
+
+
+
+function reset(){
+   arr1 = [];
+  arr1 =  fill();
+   var pickedColor = selectedColor(arr1);
+   colorDisplay.textContent = pickedColor;
+ //  console.log(pickedColor);
+ 
+ for(var i= 0;i<6;++i ){
   
-   squares[i].style.background = arr[i];
-   squares[i].addEventListener("click",function(){
+    squares[i].style.background = arr1[i];
+    squares[i].addEventListener("click",function(){
     var clickedcolor = this.style.background;
     console.log(clickedcolor);
-    console.log(pickedColor);
+   
+
     if(clickedcolor === pickedColor){
       messageDisplay.textContent = "correct!";
       score  = score+1;
-      changeColor();
+      resetButton.value = "Play Again?";
+
+      changeColor(pickedColor);
     }
-    else {
-    	this.style.background = "#132838"
-// this.style.opacity += 0.1;
-    	messageDisplay.textContent = "try again!!";
-scoreDisplay.textContent = "Your Score is : " + score; 
+    else 
+    {
+      this.style.background = "#132838"
+      messageDisplay.textContent = "try again!!";
+      scoreDisplay.textContent = "Your Score is : " + score; 
 }
   
   });
 }
+}
 
-function changeColor(){
+
+
+function changeColor(pickedColor){
 	for(var i=0;i<6;i++){
 		squares[i].style.background = pickedColor;
 	}
@@ -65,10 +88,10 @@ function randomNumber(){
 
 	return i;
 }
-function selectedColor(){
+function selectedColor(arr){
 
 	var pickedcolor = arr[randomNumber()];
-console.log(pickedcolor);
+//console.log(pickedcolor);
   return pickedcolor;
 }
 

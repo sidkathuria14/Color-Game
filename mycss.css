@@ -35,6 +35,7 @@ h2 {
 #msg{
     color: black;
     font-size: 30px;
+    display: inline-block;
 }
 
 #colorDisplay{
@@ -46,12 +47,18 @@ h2 {
 	width: 100%;
 	height: 40px;
 	background: white;
-	float: left;
+	
 	text-align: center;
 
 }
 #playagain{
 	background: white;
 	border: none;
+	color: #4682B4;
+	font-size: 30px;
 	vertical-align: center;
+}
+#playagain:hover{
+	background: #4682B4;
+	color: white;
 }
