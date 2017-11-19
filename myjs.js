@@ -6,11 +6,18 @@ var messageDisplay = document.querySelector("#message");
 var scoreDisplay = document.querySelector("#score");
 var head = document.querySelector("h1");
 var score = 0;
+var pickedColor;
+var arr1;
 
 reset();
+setUpSquares();
+
 
 resetButton.addEventListener("click",function(){ 
+  
+  score = 0;
   reset();
+  setUpSquares();
   resetColors();
   messageDisplay.textContent = ""; 
   resetButton.value = "New Colors!"});
@@ -20,16 +27,9 @@ function resetColors(){
   head.style.background = "#4682B4";
 }
 
-
-
-function reset(){
-   arr1 = [];
-  arr1 =  fill();
-   var pickedColor = selectedColor(arr1);
-   colorDisplay.textContent = pickedColor;
- //  console.log(pickedColor);
+function setUpSquares(){
  
- for(var i= 0;i<6;++i ){
+for(var i= 0;i<6;++i ){
   
     squares[i].style.background = arr1[i];
     squares[i].addEventListener("click",function(){
@@ -53,6 +53,16 @@ function reset(){
   
   });
 }
+}
+
+function reset(){
+
+  arr1 =  fill();
+   pickedColor = selectedColor(arr1);
+   colorDisplay.textContent = pickedColor;
+ //  console.log(pickedColor);
+ 
+ 
 }
 
 
